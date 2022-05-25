@@ -1,9 +1,9 @@
-INSERT INTO department (id, name)
+INSERT INTO departments (id, name)
 VALUES  (00, "C-Suite"),
         (01, "Portfolio Management"),
         (02, "Credit Research");
 
-INSERT INTO role (id, title, salary, department_id)
+INSERT INTO roles (id, title, salary, department_id)
 VALUES  (000, "Chief Executive Officer", 2200000, 00),
         (001, "Chief Financial Officer", 1750000, 00), 
         (002, "Chief Compliance Officer", 1500000, 00),
@@ -15,7 +15,7 @@ VALUES  (000, "Chief Executive Officer", 2200000, 00),
         (008, "Junior Credit Analyst", 50000, 02),
         (009, "Credit Intern", 25000, 02);
 
-INSERT INTO employee (id, first_name, last_name, role_id, manager_id)
+INSERT INTO employees (id, first_name, last_name, role_id, manager_id)
 VALUES  (000, "Patrick", "Bateman", 000, 000),
         (001, "Jordon", "Belfort", 001, 000), 
         (002, "Paul", "Allen", 002, 000),
