@@ -235,9 +235,7 @@ function mainPrompt() {
                     let employee_last = results[i].last_name
                     employee_choices.push((employee_first + ' ' + employee_last))
                 }
-                console.log(employee_choices)
             })
-            console.log(employee_choices)
             db.query('SELECT * FROM roles', function (err, results) {
                 if (err) {
                     console.log(err)
