@@ -59,7 +59,7 @@ function mainPrompt() {
             })            
         }
         // View All Employees
-        // NEEDS employee ids, first names, last names, job titles, departments, salaries, and managers that the employees report to
+        
         // JOIN tables
         if (answers.main_menu === "View All Employees") {
             db.query('SELECT employees.id AS employee_id, employees.first_name AS first_name, employees.last_name AS last_name, roles.title as job_title, departments.name AS department, roles.salary AS salary, employees.last_name AS manager FROM employees JOIN roles ON employees.role_id = roles.id JOIN departments on roles.department_id = departments.id', function (err, results) {
