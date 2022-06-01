@@ -32,7 +32,7 @@ function mainPrompt() {
                     "Add A Department", 
                     "Add A Role", 
                     "Add An Employee", 
-                    // "Update An Employee Role",
+                    "Update An Employee Role",
                 ]
         }]
     return inquirer.prompt(main_prompt).then((answers) => {
