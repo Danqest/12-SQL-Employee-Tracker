@@ -32,7 +32,8 @@ function mainPrompt() {
                     "Add A Department", 
                     "Add A Role", 
                     "Add An Employee", 
-                    "Update An Employee Role"]
+                    // "Update An Employee Role",
+                ]
         }]
     return inquirer.prompt(main_prompt).then((answers) => {
         // View All Departments
@@ -61,7 +62,7 @@ function mainPrompt() {
         // NEEDS employee ids, first names, last names, job titles, departments, salaries, and managers that the employees report to
         // JOIN tables
         if (answers.main_menu === "View All Employees") {
-            db.query('SELECT * FROM employees ', function (err, results) {
+            db.query('SELECT employees.id AS employee_id, employees.first_name AS first_name, employees.last_name AS last_name, roles.title as job_title, departments.name AS department, roles.salary AS salary, employees.last_name AS manager FROM employees JOIN roles ON employees.role_id = roles.id JOIN departments on roles.department_id = departments.id', function (err, results) {
                 if (err) {
                     console.log(err)
                 }
@@ -286,24 +287,6 @@ function mainPrompt() {
     })
 }
 
-
-
-// executes displays or prompts based on selection
-// inquirer
-// .prompt(main_prompt)
-// .then((answers) => {
-//     if (answers.main_menu === "View All Departments") {
-//         const tbl_department = db.query('SELECT * FROM department', function (err, results) {
-//             if (err) {
-//                 console.log(err)
-//             }
-//             return results
-//         })
-        
-//         const table = cTable.getTable(tbl_department)
-//         console.log(table)
-//     }
-// })
 
 // run main prompt
 function main() {
